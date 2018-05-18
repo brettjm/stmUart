@@ -7,11 +7,16 @@ static void MX_GPIO_Init(void)
 #tGPIO_InitTypeDef GPIO_InitStruct;
 #n#t/* GPIO Ports Clock Enable */
 #t__HAL_RCC_GPIOA_CLK_ENABLE();
-#n#t/*Configure GPIO pin : PA10 */
-#tGPIO_InitStruct.Pin = GPIO_PIN_10;
-#tGPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+#t__HAL_RCC_GPIOC_CLK_ENABLE();
+#t__HAL_RCC_GPIOD_CLK_ENABLE();
+#n#t/*Configure GPIO pin Output Level */
+#tHAL_GPIO_WritePin(Led_GPIO_Port, Led_Pin, GPIO_PIN_RESET);
+#n#t/*Configure GPIO pin : Led_Pin */
+#tGPIO_InitStruct.Pin = Led_Pin;
+#tGPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 #tGPIO_InitStruct.Pull = GPIO_NOPULL;
-#tHAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+#tGPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+#tHAL_GPIO_Init(Led_GPIO_Port, &GPIO_InitStruct);
 #n
 }
 #n
