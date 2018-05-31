@@ -40,7 +40,7 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
-uint8_t ch[] = "sun\r";
+uint8_t* uartData;
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart5;
@@ -49,6 +49,11 @@ UART_HandleTypeDef huart5;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_UART5_Init(void);
+
+void setUartData()
+{
+	uartData = "This is a sample\r";
+}
 
 int main(void)
 {
@@ -62,7 +67,8 @@ int main(void)
 	MX_GPIO_Init();
 	MX_UART5_Init();
 
-	HAL_UART_Transmit(&huart5, (uint8_t *)ch, 4, 0xFFFF);
+	setUartData();
+	HAL_UART_Transmit(&huart5, uartData, DATA_TRANSFER_SIZE, 0xFFFF);
 
 	while (1)
 	{

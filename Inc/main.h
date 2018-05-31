@@ -38,17 +38,14 @@
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
-  /* Includes ------------------------------------------------------------------*/
 
 /* Includes ------------------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/
-
 #define Led_Pin GPIO_PIN_5
 #define Led_GPIO_Port GPIOA
+
+#define DATA_TRANSFER_SIZE 17
 
 /* ########################## Assert Selection ############################## */
 /**
@@ -56,10 +53,6 @@
   *        HAL drivers code
   */
 /* #define USE_FULL_ASSERT    1U */
-
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
 
 #ifdef __cplusplus
  extern "C" {
