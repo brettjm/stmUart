@@ -17,8 +17,7 @@ RX0  --> UART_RX
 ```
 
 ## How to use
-Load `lc_ap.ino` onto the Arduino Uno.
-Connect to `atmelwifi` on client device. Password is set as: `1234567890`
+Load `lc_ap.ino` onto the Arduino Uno, then connect to `atmelwifi` using any client device.\ Password is set as: `1234567890`\
 To initiate UDP connection, run the following NetCat command:
 ```
 nc -u 192.168.1.1 80
